@@ -99,13 +99,13 @@ function attrs(data) {
 }
 
 function attr(name, value) {
-    if(value === null || value === undefined) {
+    if(value === null || value === undefined || value === false) {
         return '';
     }
 
     var v = isArray(value) ? value.join(' ') : value;
 
-    return name + '="' + escapeHtml(v) + '"' : '';
+    return name + '="' + escapeHtml(v) + '"';
 }
 
 return buildItem;
