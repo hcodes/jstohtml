@@ -1,5 +1,5 @@
 /*!
- * js2html v1.0.0
+ * js2html v1.0.1
  * Copyright 2014 Denis Seleznev
  * Released under the MIT license.
  *
@@ -15,6 +15,9 @@ var noClosingTag = [
         'link', 'meta', 'area', 'command',
         'base', 'col', 'param', 'wbr', 'hr', 'keygen'
     ],
+    ignoredKeys = ['c', 'cl', 't', 'class'],
+    isArray = Array.isArray,
+    toString = Object.prototype.toString,
     entityMap = {
         '&': "&amp;",
         '<': "&lt;",
@@ -23,11 +26,10 @@ var noClosingTag = [
         "'": '&#39;',
         '/': '&#x2F;'
     },
-    isArray = Array.isArray,
-    toString = Object.prototype.toString;
+    escapeRE = /[&<>"'\/]/g;
 
 function escapeHtml(str) {
-    return ('' + str).replace(/[&<>"'\/]/g, function(s) {
+    return str.replace(escapeRE, function(s) {
         return entityMap[s];
     });
 }
@@ -76,36 +78,24 @@ function tag(data) {
 }
 
 function attrs(data) {
-    var keys = Object.keys(data),
-        ignoredItems = ['cl', 'class', 'c', 't'],
-        cl = data['cl'] || data['class'],
-        text = [],
-        buf = '';
+    var cl = data['cl'] || data['class'],
+        text = cl ? attr('class', cl) : '';
 
-    if(cl) {
-        text.push(attr('class', cl));
-    }
-
-    for(var i = 0, len = keys.length; i < len; i++) {
-        var item = keys[i];
-        if(ignoredItems.indexOf(item) === -1) {
-            text.push(attr(item, data[item]));
+    for(var key in data) {
+        if(data.hasOwnProperty(key) && ignoredKeys.indexOf(key) === -1) {
+            text += attr(key, data[key]);
         }
     }
 
-    buf = text.join(' ');
-
-    return buf ? ' ' + buf : '';
+    return text;
 }
 
 function attr(name, value) {
-    if(value === null || value === undefined || value === false) {
+    if(value === undefined || value === null || value === false) {
         return '';
     }
 
-    var v = isArray(value) ? value.join(' ') : value;
-
-    return name + '="' + escapeHtml(v) + '"';
+    return ' ' + name+ '="' + escapeHtml(isArray(value) ? value.join(' ') : '' + value) + '"';
 }
 
 return buildItem;
