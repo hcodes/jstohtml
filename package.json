@@ -1,18 +1,18 @@
 {
   "name": "jstohtml",
   "description": "Compact record format HTML at JavaScript",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "name": "Denis Seleznev",
     "email": "hcodes@yandex.ru",
-    "url": "https://github.com/hcodes/js2html"
+    "url": "https://github.com/hcodes/jstohtml"
   },
-  "main": "dist/js2html.js",
-  "homepage": "https://github.com/hcodes/js2html",
+  "main": "dist/jstohtml.js",
+  "homepage": "https://github.com/hcodes/jstohtml",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hcodes/js2html.git"
+    "url": "git://github.com/hcodes/jstohtml.git"
   },
   "keywords": [
     "js to html",
