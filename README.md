@@ -4,7 +4,7 @@ jstohtml
 [![Build Status](https://img.shields.io/travis/hcodes/jstohtml.svg?style=flat)](https://travis-ci.org/hcodes/jstohtml)
 [![Coverage Status](https://img.shields.io/coveralls/hcodes/jstohtml.svg?style=flat)](https://coveralls.io/r/hcodes/jstohtml)
 
-[![Dependency Status](https://img.shields.io/david/hcodes/jstohtml.svg?style=flat)](https://david-dm.org/typograf/typograf) [![devDependency Status](https://img.shields.io/david/dev/typograf/typograf.svg?style=flat)](https://david-dm.org/hcodes/jstohtml#info=devDependencies)
+[![Dependency Status](https://img.shields.io/david/hcodes/jstohtml.svg?style=flat)](https://david-dm.org/hcodes/jstohtml) [![devDependency Status](https://img.shields.io/david/dev/hcodes/jstohtml.svg?style=flat)](https://david-dm.org/hcodes/jstohtml#info=devDependencies)
 
 
 Compact record format HTML at JavaScript.
