@@ -1,5 +1,5 @@
 /*!
- * jstohtml v1.1.0
+ * jstohtml v1.1.2
  * Copyright 2014 Denis Seleznev
  * Released under the MIT license.
  *
