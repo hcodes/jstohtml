@@ -32,10 +32,10 @@ console.log(jstohtml({c: 'Hello world!'}));
 ```JavaScript
 jstohtml('Hello world!');
 // "Hello world!"
- 
+
 jstohtml({});
 // "<div></div>"
- 
+
 jstohtml({cl: 'main'});
 // "<div class="main"></div>"
 
@@ -69,6 +69,21 @@ jstohtml([{
     }]
 }]);
 // "<div><div>Content1</div><div>Content2</div></div>"
+```
+
+### BEM
+```JavaScript
+jstohtml({b: 'example'}); // block
+// <div class="example"></div>
+
+jstohtml({b: 'example', e: 'elem'}); // block, elem
+// <div class="example__elem"></div>
+
+jstohtml({b: 'example', m: {a: true, b: 'val'}}); // block, mod
+// <div class="example example_a example_b_val"></div>
+
+jstohtml({b: 'example', e: 'elem', m: {a: true, b: 'val'}}); // block, elem, mod
+// <div class="example__elem example__elem_a example__elem_b_val"></div>
 ```
 
 ### Complex

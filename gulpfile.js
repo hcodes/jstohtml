@@ -1,9 +1,12 @@
-var gulp = require('gulp'),
-    fs = require('fs'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    destDir = './dist/',
-    src = './src/jstohtml.js';
+'use strict';
+
+const fs = require('fs');
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+
+const destDir = './dist/';
+const src = './src/jstohtml.js';
 
 gulp.task('js', function() {
     gulp.src(src)

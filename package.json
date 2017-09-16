@@ -1,7 +1,7 @@
 {
   "name": "jstohtml",
   "description": "Compact record format HTML at JavaScript",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "author": {
     "name": "Denis Seleznev",
     "email": "hcodes@yandex.ru",
@@ -21,7 +21,7 @@
     "html"
   ],
   "engines": {
-    "node": ">= 0.12"
+    "node": ">= 4"
   },
   "files": [
     "dist",
@@ -29,13 +29,13 @@
     "README.md"
   ],
   "devDependencies": {
-    "chai": "3.5.x",
-    "mocha": "3.0.x",
+    "chai": "4.1.x",
+    "mocha": "3.5.x",
     "gulp": "3.9.x",
     "gulp-rename": "1.2.x",
-    "gulp-uglify": "2.0.x",
+    "gulp-uglify": "3.0.x",
     "istanbul": "0.4.x",
-    "eslint": "3.x"
+    "eslint": "4.x"
   },
   "scripts": {
     "test": "npm run-script gulp && npm run-script eslint && npm run-script unit-test-coverage",
