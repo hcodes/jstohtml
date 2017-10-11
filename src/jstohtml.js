@@ -152,7 +152,7 @@
                 }
 
                 result = this.attr('class', cl);
-                this._currentBlock = data.b;
+                this._currentBlock = b;
             } else {
                 cl = data['cl'] || data['class'];
                 result = cl ? this.attr('class', cl) : '';
