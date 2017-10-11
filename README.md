@@ -26,7 +26,7 @@ var jstohtml = require('jstohtml');
 console.log(jstohtml({c: 'Hello world!'}));
 ```
 
-##Examples
+## Examples
 
 ### Elementary
 ```JavaScript
