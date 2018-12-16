@@ -29,17 +29,17 @@
     "README.md"
   ],
   "devDependencies": {
-    "chai": "4.1.x",
-    "mocha": "3.5.x",
-    "gulp": "3.9.x",
-    "gulp-rename": "1.2.x",
-    "gulp-uglify": "3.0.x",
-    "istanbul": "0.4.x",
-    "eslint": "4.x"
+    "chai": "^4.2.0",
+    "eslint": "^5.10.0",
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
+    "istanbul": "^0.4.0",
+    "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "npm run-script gulp && npm run-script eslint && npm run-script unit-test-coverage",
-    "gulp": "./node_modules/.bin/gulp",
+    "test": "npm run-script build && npm run-script eslint && npm run-script unit-test-coverage",
+    "build": "./node_modules/.bin/gulp",
     "eslint": "./node_modules/.bin/eslint .",
     "unit-test": "./node_modules/.bin/mocha -u bdd -R spec --recursive test",
     "unit-test-coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -u bdd -R spec --recursive test"

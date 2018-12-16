@@ -1,23 +1,19 @@
 'use strict';
 
-const fs = require('fs');
 const gulp = require('gulp');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 
-const destDir = './dist/';
 const src = './src/jstohtml.js';
+const dest = './dist/';
 
-gulp.task('js', function() {
-    gulp.src(src)
-        .pipe(gulp.dest(destDir));
-});
+gulp.task('js', () => gulp.src(src).pipe(gulp.dest(dest)));
 
-gulp.task('minjs', ['js'], function() {
-    gulp.src(src)
+gulp.task('minjs', gulp.series('js'), () => {
+    return gulp.src(src)
         .pipe(rename('jstohtml.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(destDir));
+        .pipe(gulp.dest(dest));
 });
 
-gulp.task('default', ['js', 'minjs']);
+gulp.task('default', gulp.series('js', 'minjs'));
