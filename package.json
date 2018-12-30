@@ -1,7 +1,7 @@
 {
   "name": "jstohtml",
   "description": "Compact record format HTML at JavaScript",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": {
     "name": "Denis Seleznev",
     "email": "hcodes@yandex.ru",
@@ -25,6 +25,7 @@
   },
   "files": [
     "dist",
+    "index.d.ts",
     "LICENSE",
     "README.md"
   ],
