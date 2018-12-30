@@ -1,21 +1,17 @@
-/*!
- * jstohtml v2.0.0
- * © 2017 Denis Seleznev
- * License: MIT
- *
- * https://github.com/hcodes/jstohtml/
-*/
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = global || self, global.jstohtml = factory());
+}(this, function () { 'use strict';
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define('jstohtml', [], factory);
-    } else if (typeof exports === 'object') {
-        module.exports = factory();
-    } else {
-        root.jstohtml = factory();
-    }
-}(this, function() {
-    'use strict';
+    /*!
+     * jstohtml
+     * © 2018 Denis Seleznev
+     * License: MIT
+     *
+     * https://github.com/hcodes/jstohtml/
+    */
+
     var isArray = Array.isArray,
         toString = Object.prototype.toString,
         entityMap = {
@@ -232,7 +228,16 @@
         }
     };
 
-    return function(data) {
+    /**
+     * JS to HTML.
+     * 
+     * @param {*} data
+     * @returns {string}
+     */
+    function jstohtml(data) {
         return Engine.reset().build(data);
-    };
+    }
+
+    return jstohtml;
+
 }));
