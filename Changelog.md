@@ -1,3 +1,6 @@
+# v2.1.2
+Updated dev deps in package.json.
+
 # v2.1.1
 - Added index.d.ts in package.json
 

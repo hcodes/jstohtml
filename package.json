@@ -31,20 +31,20 @@
   ],
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^5.11.1",
-    "istanbul": "^0.4.0",
-    "mocha": "^5.2.0",
-    "rollup": "^1.0.0",
-    "uglify-js": "^3.4.9"
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "rollup": "^1.14.4",
+    "uglify-js": "^3.6.0"
   },
   "scripts": {
     "test": "npm run-script build && npm run-script eslint && npm run-script unit-test-coverage",
-    "uglifyjs": "./node_modules/.bin/uglifyjs dist/jstohtml.js --compress --comments '/^!/' -o dist/jstohtml.min.js",
-    "rollup": "./node_modules/.bin/rollup -c ./rollup.config.js",
+    "uglifyjs": "uglifyjs dist/jstohtml.js --compress --comments '/^!/' -o dist/jstohtml.min.js",
+    "rollup": "rollup -c ./rollup.config.js",
     "build": "cp src/index.js dist/jstohtml.esm.js && npm run rollup && npm run uglifyjs",
-    "eslint": "./node_modules/.bin/eslint .",
-    "unit-test": "./node_modules/.bin/mocha -u bdd -R spec --recursive test",
-    "unit-test-coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -u bdd -R spec --recursive test"
+    "eslint": "eslint .",
+    "unit-test": "mocha",
+    "unit-test-coverage": "nyc mocha"
   },
   "typings": "./index.d.ts"
 }
