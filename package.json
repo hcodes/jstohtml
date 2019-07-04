@@ -44,7 +44,13 @@
     "build": "cp src/index.js dist/jstohtml.esm.js && npm run rollup && npm run uglifyjs",
     "eslint": "eslint .",
     "unit-test": "mocha",
-    "unit-test-coverage": "nyc mocha"
+    "unit-test-coverage": "nyc mocha",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "typings": "./index.d.ts"
+  "typings": "./index.d.ts",
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.189.0"
+  }
 }
