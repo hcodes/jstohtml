@@ -31,10 +31,10 @@
   ],
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^5.16.0",
+    "eslint": "^6.0.1",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
-    "rollup": "^1.14.4",
+    "rollup": "^1.16.6",
     "uglify-js": "^3.6.0"
   },
   "scripts": {
