@@ -1,3 +1,6 @@
+# v2.1.3
+Updated dev deps in package.json.
+
 # v2.1.2
 Updated dev deps in package.json.
 
