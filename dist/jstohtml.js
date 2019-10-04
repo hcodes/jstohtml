@@ -6,15 +6,13 @@
 
     /*!
      * jstohtml
-     * © 2018 Denis Seleznev
+     * © 2019 Denis Seleznev
      * License: MIT
      *
      * https://github.com/hcodes/jstohtml/
     */
 
-    var isArray = Array.isArray,
-        toString = Object.prototype.toString,
-        entityMap = {
+    var entityMap = {
             '&': '&amp;',
             '<': '&lt;',
             '>': '&gt;',
@@ -53,7 +51,7 @@
          * @returns {boolean}
          */
         isPlainObj: function(obj) {
-            return toString.call(obj) === '[object Object]';
+            return Object.prototype.toString.call(obj) === '[object Object]';
         },
 
         /**
@@ -71,7 +69,7 @@
 
             if (this.isPlainObj(data)) {
                 return this.tag(data);
-            } else if (isArray(data)) {
+            } else if (Array.isArray(data)) {
                 for (var i = 0, len = data.length; i < len; i++) {
                     buf.push(this.build(data[i]));
                 }
@@ -132,6 +130,7 @@
 
                 if (this.isPlainObj(m)) {
                     for (key in m) {
+                        // eslint-disable-next-line no-prototype-builtins
                         if (m.hasOwnProperty(key)) {
                             buf.push(this.elem(b, e, key, m[key]));
                         }
@@ -155,6 +154,7 @@
             }
 
             for (key in data) {
+                // eslint-disable-next-line no-prototype-builtins
                 if (data.hasOwnProperty(key) && this.ignoredKeys.indexOf(key) === -1) {
                     result += this.attr(key, data[key]);
                 }
@@ -175,7 +175,7 @@
                 return '';
             }
 
-            return ' ' + name + '="' + escapeHtml(isArray(value) ? value.join(' ') : '' + value) + '"';
+            return ' ' + name + '="' + escapeHtml(Array.isArray(value) ? value.join(' ') : '' + value) + '"';
         },
 
         /**
@@ -200,7 +200,6 @@
          * @returns {string}
          */
         elem: function(block, elemName, modName, modVal) {
-
             return block + (elemName ? '__' + elemName : '') + this.mod(modName, modVal);
         },
 
