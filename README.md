@@ -1,9 +1,9 @@
 jstohtml
 ========
 [![NPM version](https://img.shields.io/npm/v/jstohtml.svg?style=flat)](https://www.npmjs.com/package/jstohtml)
-[![Build Status](https://img.shields.io/travis/hcodes/jstohtml.svg?style=flat)](https://travis-ci.org/hcodes/jstohtml)
-[![Coverage Status](https://img.shields.io/coveralls/hcodes/jstohtml.svg?style=flat)](https://coveralls.io/r/hcodes/jstohtml)
-[![Dependency Status](https://img.shields.io/david/hcodes/jstohtml.svg?style=flat)](https://david-dm.org/hcodes/jstohtml)
+[![NPM downloads](https://img.shields.io/npm/dm/jstohtml.svg?style=flat)](https://www.npmjs.com/package/jstohtml)
+[![bundlephobia](https://badgen.net/bundlephobia/minzip/jstohtml)](https://bundlephobia.com/result?p=jstohtml)
+[![install size](https://packagephobia.com/badge?p=jstohtml)](https://packagephobia.com/result?p=jstohtml)
 
 Compact record format HTML at JavaScript.
 
