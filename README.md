@@ -22,68 +22,33 @@ npm install jstohtml --save-dev
 ```
 
 ```js
-var jstohtml = require('jstohtml');
+import jstohtml from 'jstohtml';
 console.log(jstohtml({c: 'Hello world!'}));
 ```
 
 ## Examples
 
 ### Elementary
-```JavaScript
-jstohtml('Hello world!');
-// "Hello world!"
-
-jstohtml({});
-// "<div></div>"
-
-jstohtml({cl: 'main'});
-// "<div class="main"></div>"
-
-jstohtml({cl: ['main', 'red']});
-// "<div class="main red"></div>"
-
-jstohtml({
-    title: 'My title',
-    'data-a': 123,
-    style: 'font-size: 2em'
-});
-// "<div title="My title" data-a="123" style="font-size: 2em"></div>"
-
-jstohtml({t: 'p', cl: ['main', 'red'], c: 'Content'});
-// "<p class="main red">Content</p>"
-
-jstohtml([]);
-// ""
-
-jstohtml([{}, {}]);
-// "<div></div><div></div>"
-
-jstohtml([{c: {c: 'Content'}}]);
-// "<div><div>Content</div></div>"
-
-jstohtml([{
-    c: [{
-        c: 'Content1'
-    }, {
-        c: 'Content2'
-    }]
-}]);
-// "<div><div>Content1</div><div>Content2</div></div>"
-```
+| Input      | Output |
+| ----------- | ----------- |
+|`jstohtml('Hello world!');`|`Hello world!`|
+|`jstohtml({});`|`<div></div>`|
+|`jstohtml({cl: 'main'});`|`<div class="main"></div>`|
+|`jstohtml({cl: ['main', 'red']});`|`<div class="main red"></div>`|
+|`jstohtml({title: 'My title', 'data-a': 123, style: 'font-size: 2em'});`|`<div title="My title" data-a="123" style="font-size: 2em"></div>`|
+|`jstohtml({t: 'p', cl: ['main', 'red'], c: 'Content'});`|`<p class="main red">Content</p>`|
+|`jstohtml([]);`| |
+|`jstohtml([{}, {}]);`|`<div></div><div></div>`|
+|`jstohtml([{c: {c: 'Content'}}]);`|`<div><div>Content</div></div>`|
+|`jstohtml([{c: [{c: 'Content1'}, {c: 'Content2'}] }]);`|`<div><div>Content1</div><div>Content2</div></div>`|
 
 ### BEM
-```JavaScript
-jstohtml({b: 'example'}); // block
-// <div class="example"></div>
-
-jstohtml({b: 'example', e: 'elem'}); // block, elem
-// <div class="example__elem"></div>
-
-jstohtml({b: 'example', m: {a: true, b: 'val'}}); // block, mod
-// <div class="example example_a example_b_val"></div>
-
-jstohtml({b: 'example', e: 'elem', m: {a: true, b: 'val'}}); // block, elem, mod
-// <div class="example__elem example__elem_a example__elem_b_val"></div>
+| Input      | Output |
+| ----------- | ----------- |
+|`jstohtml({b: 'example'}); // block`|`<div class="example"></div>`|
+|`jstohtml({b: 'example', e: 'elem'}); // block, elem`|`<div class="example__elem"></div>`|
+|`jstohtml({b: 'example', m: {a: true, b: 'val'}}); // block, mod`|`<div class="example example_a example_b_val"></div>`|
+|`jstohtml({b: 'example', e: 'elem', m: {a: true, b: 'val'}}); // block, elem, mod`|`<div class="example__elem example__elem_a example__elem_b_val"></div>`|
 ```
 
 ### Complex
