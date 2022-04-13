@@ -1,3 +1,6 @@
+# v2.2.0
+Fix attribute escaping.
+
 # v2.1.4
 Fix main key in package.json.
 
