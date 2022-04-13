@@ -1,12 +1,12 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global = global || self, global.jstohtml = factory());
-}(this, function () { 'use strict';
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.jstohtml = factory());
+})(this, (function () { 'use strict';
 
     /*!
      * jstohtml
-     * © 2019 Denis Seleznev
+     * © 2022 Denis Seleznev
      * License: MIT
      *
      * https://github.com/hcodes/jstohtml/
@@ -17,11 +17,10 @@
             '<': '&lt;',
             '>': '&gt;',
             '"': '&quot;',
-            '\'': '&#39;',
-            '/': '&#x2F;'
+            '\'': '&#39;'
         },
-        escapeRE = /[&<>"'/]/g,
-        escapeHtml = function(str) {
+        escapeRE = /[&<>"']/g,
+        escapeAttr = function(str) {
             return str.replace(escapeRE, function(s) {
                 return entityMap[s];
             });
@@ -175,7 +174,7 @@
                 return '';
             }
 
-            return ' ' + name + '="' + escapeHtml(Array.isArray(value) ? value.join(' ') : '' + value) + '"';
+            return ' ' + name + '="' + escapeAttr(Array.isArray(value) ? value.join(' ') : '' + value) + '"';
         },
 
         /**
