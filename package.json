@@ -1,7 +1,7 @@
 {
   "name": "jstohtml",
   "description": "Compact record format HTML at JavaScript",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "author": {
     "name": "Denis Seleznev",
     "email": "hcodes@yandex.ru",
@@ -31,21 +31,18 @@
     "README.md"
   ],
   "devDependencies": {
-    "chai": "^4.2.0",
-    "eslint": "^6.8.0",
-    "mocha": "^7.1.1",
-    "nyc": "^15.0.0",
-    "rollup": "^2.1.0",
-    "uglify-js": "^3.8.0"
+    "eslint": "^8.13.0",
+    "jest": "^27.5.1",
+    "rollup": "^2.70.1",
+    "uglify-js": "^3.15.4"
   },
   "scripts": {
-    "test": "npm run-script build && npm run-script eslint && npm run-script unit-test-coverage",
+    "test": "npm run-script build && npm run-script eslint && npm run-script unit-test",
     "uglifyjs": "uglifyjs dist/jstohtml.js --compress --comments '/^!/' -o dist/jstohtml.min.js",
     "rollup": "rollup -c ./rollup.config.js",
     "build": "cp src/index.js dist/jstohtml.esm.js && npm run rollup && npm run uglifyjs",
     "eslint": "eslint .",
-    "unit-test": "mocha",
-    "unit-test-coverage": "nyc mocha"
+    "unit-test": "jest ."
   },
   "typings": "./index.d.ts"
 }
